@@ -1,0 +1,16 @@
+Basic Requirements:
+                 
+                  Jupyter Notebook
+                  MongoDB
+                  MYSQL
+                  Streamlit
+
+Packages Installed:
+
+                  pymysql
+                  pymongo
+                  pandas 
+                  SqlAlchemy
+                  isodate
+                
+
