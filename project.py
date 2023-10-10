@@ -29,7 +29,7 @@ selected = option_menu("YouTube Data Management and Visualization Tool", ["HOME"
 ##--------------------------API Request----------------------## 
 # Get API = Google Account-->Google Cloud Console-->Create a Project-->Enable YouTube API-->Create API Key-->Restrict API Key (Recommended)
 # channel Id = YouTube--> Channel page--> right "click" view page source --> search "Channel_id" 
-api_key = 'AIzaSyBcuPuQy680CetRiIaXgfIY_yCgkd_JWvA' #can you use your API Key 
+api_key = '********************************' #can you use your API Key 
 channel_id=[]    
 youtube = build('youtube', 'v3', developerKey=api_key)
 ##--------------------------Channel Details----------------------## 
@@ -193,11 +193,11 @@ if selected=="MIGRATION":
             client.close()   # close MongoDB Connection's
         
         #--------------Connect MySQL Database----------------#
-            myconnection = pymysql.connect(host="127.0.0.1",user="root",passwd="Akash21**")  # use your MySql password
+            myconnection = pymysql.connect(host="127.0.0.1",user="root",passwd="*********")  # use your MySql password
             cur = myconnection.cursor()
             cur.execute("CREATE DATABASE IF NOT EXISTS YOUTUBE_DB") #Create Database into MySQL
             #-----------------------------SQL ENGINE CREATE-----------------------------#
-            engine = create_engine('mysql+pymysql://root:Akash21**@localhost/YOUTUBE_DB') # use your MySql password
+            engine = create_engine('mysql+pymysql://root:*********@localhost/YOUTUBE_DB') # use your MySql password
                             #---------Migrate Channel Details----------#
             try:  
                 Channel_Data.to_sql('channel_data', con=engine, if_exists='replace', index=False, method='multi')
@@ -218,7 +218,7 @@ if selected=="MIGRATION":
 if selected=="ANALYSIS":
     st.header(":green[Finaly we reached analysis the data]")
     st.write("📈 **Ready to Dive In? Let's Start Analyzing!**")
-    myconnection = pymysql.connect(host="127.0.0.1",user="root",passwd="Akash21**",database='YOUTUBE_DB') # use your MySql password
+    myconnection = pymysql.connect(host="127.0.0.1",user="root",passwd="*********",database='YOUTUBE_DB') # use your MySql password
     cur = myconnection.cursor()
 #-- Connect The MySQL DATABASE--#
 #--Queries is dict fortmat key means question and then value means MySQL Query --#
